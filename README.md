@@ -1,73 +1,50 @@
-Low-Power Neural Accelerator for Edge AI Applications
-Overview
+🚀 Project Idea
 
-This project explores the design and evaluation of a low-power neural network accelerator, focusing on energy-efficient classification tasks.
-We target ECG signal classification (healthy vs. abnormal heartbeats) and MNIST digit recognition as benchmarks to measure performance.
+We are building a low-power neural network accelerator designed for edge AI.
+Benchmarks:
 
-The goal is to demonstrate how hardware-aware optimizations and lightweight neural architectures can significantly reduce power consumption without compromising accuracy, making the solution suitable for edge and wearable devices.
+🫀 ECG classification → Normal vs. abnormal heartbeats.
 
-Objectives
+🔢 MNIST digit recognition → Standard test baseline.
 
-Design a neural accelerator optimized for low power consumption.
+Goal: Prove that optimized, hardware-aware models can cut power consumption without killing accuracy.
 
-Implement and train models for:
+⚡ What We’re Doing
 
-ECG signal classification (binary classification).
+Compact neural nets for ECG + MNIST
 
-MNIST digit classification (multi-class baseline).
+Quantization & pruning → lower power usage
 
-Compare results with traditional CPU/GPU inference.
+Accelerator simulation with multi-MAC design
 
-Evaluate trade-offs in accuracy, power, latency, and memory footprint.
+Benchmarks:
 
-Methodology
+Accuracy 📈
 
-Model Development
+Power & energy 🔋
 
-Train lightweight neural networks for ECG and MNIST.
+Latency ⏱️
 
-Optimize using quantization, pruning, and reduced precision arithmetic.
+🌍 Why It Matters
 
-Accelerator Design
+Wearable health devices
 
-Implement hardware-inspired accelerator simulation.
+IoT sensors on battery power
 
-Explore systolic arrays, parallelism, and low-bit multipliers.
+Energy-efficient edge AI
 
-Performance Evaluation
+👥 Team Roles
 
-Compare accelerator vs. CPU/GPU in terms of:
+ECG Data & Model – preprocessing + training
 
-Accuracy
+MNIST Baseline – lightweight CNN
 
-Power/Energy consumption
+Accelerator Core – low-power compute design
 
-Latency
+Performance Benchmarks – compare CPU vs. accelerator
 
-Model size
+Docs & Repo – GitHub + report polish
 
-Results (Expected)
+📌 Status
 
-Significant power savings with minimal accuracy drop.
-
-Demonstration of feasibility for real-time ECG monitoring on low-power devices.
-
-Team Contributions
-
-Model Training & ECG Data Processing – Preprocessing ECG signals and building the classifier.
-
-MNIST Baseline Development – Training a compact CNN for MNIST.
-
-Accelerator Design & Simulation – Developing hardware-aware modules for efficiency.
-
-Performance Analysis – Comparing energy, accuracy, and latency metrics.
-
-Documentation & Integration – Structuring repository, writing reports, and combining results.
-
-Applications
-
-Wearable health monitoring (ECG devices).
-
-IoT edge computing for pattern recognition.
-
-Low-power AI accelerators for mobile and embedded systems.
+🚧 Work in progress → Final results will include power vs. accuracy trade-offs.
