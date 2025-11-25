@@ -1,0 +1,100 @@
+# =============================================================================
+# Nexys 4 DDR / Nexys A7-100T Master XDC for MNIST Accelerator
+# =============================================================================
+
+# --- System Clock (100 MHz) ---
+set_property PACKAGE_PIN E3 [get_ports board_clk_100mhz]
+set_property IOSTANDARD LVCMOS33 [get_ports board_clk_100mhz]
+create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports board_clk_100mhz]
+
+# --- CPU Reset Button (Active Low) ---
+set_property PACKAGE_PIN C12 [get_ports cpu_resetn]
+set_property IOSTANDARD LVCMOS33 [get_ports cpu_resetn]
+
+# --- Start Button (BTNC - Center) ---
+set_property PACKAGE_PIN N17 [get_ports btn_start]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_start]
+
+# =============================================================================
+# SWITCHES
+# =============================================================================
+
+# --- Image Select Switches [3:0] (SW0 - SW3) ---
+# Selects which image from memory to process
+set_property PACKAGE_PIN J15 [get_ports {sw_image_sel[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_image_sel[0]}]
+set_property PACKAGE_PIN L16 [get_ports {sw_image_sel[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_image_sel[1]}]
+set_property PACKAGE_PIN M13 [get_ports {sw_image_sel[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_image_sel[2]}]
+set_property PACKAGE_PIN R15 [get_ports {sw_image_sel[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_image_sel[3]}]
+
+# --- Debug/Neuron Select Switches [3:0] (SW4 - SW7) ---
+# Selects which Hidden Neuron (0-15) to show on the 7-Seg
+# FIXED: Mapped to physical SW4, SW5, SW6, SW7 (sequentially)
+set_property PACKAGE_PIN R17 [get_ports {sw_debug_sel[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_debug_sel[0]}]
+set_property PACKAGE_PIN T18 [get_ports {sw_debug_sel[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_debug_sel[1]}]
+set_property PACKAGE_PIN U18 [get_ports {sw_debug_sel[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_debug_sel[2]}]
+set_property PACKAGE_PIN R13 [get_ports {sw_debug_sel[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw_debug_sel[3]}]
+
+# =============================================================================
+# LEDS
+# =============================================================================
+
+# --- Done LED (LED0) ---
+set_property PACKAGE_PIN H17 [get_ports led_done]
+set_property IOSTANDARD LVCMOS33 [get_ports led_done]
+
+# --- Prediction Result LEDs [3:0] (LED1 - LED4) ---
+# NEW: Shows the predicted digit in binary (e.g., 0101 = 5)
+set_property PACKAGE_PIN K15 [get_ports {led_pred[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pred[0]}]
+set_property PACKAGE_PIN J13 [get_ports {led_pred[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pred[1]}]
+set_property PACKAGE_PIN N14 [get_ports {led_pred[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pred[2]}]
+set_property PACKAGE_PIN R18 [get_ports {led_pred[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {led_pred[3]}]
+
+# =============================================================================
+# 7-SEGMENT DISPLAY
+# =============================================================================
+
+# --- Segments (Cathodes A-G) ---
+set_property PACKAGE_PIN T10 [get_ports {seg_out[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[0]}]
+set_property PACKAGE_PIN R10 [get_ports {seg_out[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[1]}]
+set_property PACKAGE_PIN K16 [get_ports {seg_out[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[2]}]
+set_property PACKAGE_PIN K13 [get_ports {seg_out[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[3]}]
+set_property PACKAGE_PIN P15 [get_ports {seg_out[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[4]}]
+set_property PACKAGE_PIN T11 [get_ports {seg_out[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[5]}]
+set_property PACKAGE_PIN L18 [get_ports {seg_out[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {seg_out[6]}]
+
+# --- Anodes (Digit Select 0-7) ---
+set_property PACKAGE_PIN J17 [get_ports {an_out[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[0]}]
+set_property PACKAGE_PIN J18 [get_ports {an_out[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[1]}]
+set_property PACKAGE_PIN T9 [get_ports {an_out[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[2]}]
+set_property PACKAGE_PIN J14 [get_ports {an_out[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[3]}]
+set_property PACKAGE_PIN P14 [get_ports {an_out[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[4]}]
+set_property PACKAGE_PIN T14 [get_ports {an_out[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[5]}]
+set_property PACKAGE_PIN K2 [get_ports {an_out[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[6]}]
+set_property PACKAGE_PIN U13 [get_ports {an_out[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {an_out[7]}]
